@@ -52,4 +52,12 @@ async function readARangeFromASheet() {
   const range = workbook.sheet('Sheet1').usedRange().value()
   console.log(range)
 }
-readARangeFromASheet()
+// readARangeFromASheet()
+
+// Read selecting the range
+async function readSpecificRangeFromASheet() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo3.xlsx')
+  const specificRange = workbook.sheet('Sheet1').range('A1:B2').value()
+  console.log(specificRange) // === [ [ 'Name', 'Surname' ], [ 'Carlos', 'Martínez' ] ]
+}
+readSpecificRangeFromASheet()
