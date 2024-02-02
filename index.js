@@ -4,7 +4,7 @@ import XlsxPopulate from "xlsx-populate";
 XlsxPopulate.fromBlankAsync()
 .then(fichero => {
   fichero.sheet(0).cell('A1').value('Hello World!')
-  return fichero.toFileAsync('./archivo.xlsx')
+  // return fichero.toFileAsync('./archivo.xlsx')
 })
 
 // Using async-await
@@ -13,7 +13,7 @@ async function createBlankFile() {
   fichero.sheet(0).cell('A1').value('Hello World!')
   fichero.toFileAsync('./archivo2.xlsx')
 }
-createBlankFile()
+// createBlankFile()
 
 // Create a DB using async-await
 async function createBlankFileDataBase() {
@@ -36,12 +36,12 @@ async function createBlankFileDataBase() {
 
   workbook.toFileAsync('./archivo3.xlsx')
 }
-createBlankFileDataBase()
+// createBlankFileDataBase()
 
 // Reading a file
-async function readACellFromASheet(){
+async function readACellFromASheet() {
   const workbook = await XlsxPopulate.fromFileAsync('./archivo3.xlsx')
   const a2Value = workbook.sheet('Sheet1').cell('A2').value()
   console.log(a2Value) // === 'Carlos'
 }
-readACellFromASheet()
+// readACellFromASheet()
