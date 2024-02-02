@@ -84,4 +84,17 @@ async function creatingAFileUsingJSCode() {
 
   workbook.toFileAsync('./archivo5.xlsx')
 }
-creatingAFileUsingJSCode()
+// creatingAFileUsingJSCode()
+
+// Read the file nº5, copying his content, and paste it in another file nº6 with other Sheet called 'Hoja 2'
+async function copyingAFileAndCreateOtherFileWithAnotherSheet() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo5.xlsx')
+
+  // const sheetName = workbook.sheet(0)
+  // console.log(sheetName) // <-- sheet data
+  // console.log(sheetName.name()) // === 'Sheet1'
+
+  workbook.addSheet('Hoja 2')
+  workbook.toFileAsync('./archivo6.xlsx')
+}
+copyingAFileAndCreateOtherFileWithAnotherSheet()
