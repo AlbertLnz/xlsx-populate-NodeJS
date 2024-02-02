@@ -106,4 +106,14 @@ async function readVariousSheetsNamesFromAFile() {
   const sheetsNames = workbook.sheets().map(sheet => sheet.name())
   console.log(sheetsNames) // === [ 'Sheet1', 'Hoja 2' ]
 }
-readVariousSheetsNamesFromAFile()
+// readVariousSheetsNamesFromAFile()
+
+// Change sheet name
+async function changeSheetName() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo6.xlsx')
+
+  workbook.sheet('Sheet1').name('Hoja 1')
+
+  workbook.toFileAsync('./archivo7.xlsx') // and save it in another file
+}
+changeSheetName()
