@@ -60,4 +60,17 @@ async function readSpecificRangeFromASheet() {
   const specificRange = workbook.sheet('Sheet1').range('A1:B2').value()
   console.log(specificRange) // === [ [ 'Name', 'Surname' ], [ 'Carlos', 'Martínez' ] ]
 }
-readSpecificRangeFromASheet()
+// readSpecificRangeFromASheet()
+
+//
+async function creatingAFileWithVariousRows() {
+  const workbook = await XlsxPopulate.fromBlankAsync()
+  workbook.sheet(0).cell('A1').value([
+    ['Nombre', 'Apellido', 'Edad'],
+    ['Juan', 'Perez', 34],
+    ['Laia', 'Gomez', 47]
+  ])
+
+  workbook.toFileAsync('./archivo4.xlsx')
+}
+creatingAFileWithVariousRows()
