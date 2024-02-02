@@ -9,8 +9,31 @@ XlsxPopulate.fromBlankAsync()
 
 // Using async-await
 async function createBlankFile() {
-  const  fichero = await XlsxPopulate.fromBlankAsync()
+  const fichero = await XlsxPopulate.fromBlankAsync()
   fichero.sheet(0).cell('A1').value('Hello World!')
   fichero.toFileAsync('./archivo2.xlsx')
 }
 createBlankFile()
+
+// Create a DB using async-await
+async function createBlankFileDataBase() {
+  const workbook = await XlsxPopulate.fromBlankAsync()
+
+  // Row nº1 (headers)
+  workbook.sheet(0).cell('A1').value('Name')
+  workbook.sheet(0).cell('B1').value('Surname')
+  workbook.sheet(0).cell('C1').value('Age')
+
+  // Row nº2 (data)
+  workbook.sheet(0).cell('A2').value('Carlos')
+  workbook.sheet(0).cell('B2').value('Martínez')
+  workbook.sheet(0).cell('C2').value(24)
+
+  // Row nº3 (data)
+  workbook.sheet(0).cell('A3').value('Mónica')
+  workbook.sheet(0).cell('B3').value('García')
+  workbook.sheet(0).cell('C3').value(65)
+
+  workbook.toFileAsync('./archivo3.xlsx')
+}
+createBlankFileDataBase()
