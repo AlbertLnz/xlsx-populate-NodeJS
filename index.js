@@ -117,3 +117,13 @@ async function changeSheetName() {
   workbook.toFileAsync('./archivo7.xlsx') // and save it in another file
 }
 changeSheetName()
+
+// Delete a sheet
+async function deleteSheet() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo7.xlsx')
+
+  workbook.deleteSheet('Hoja 2')
+
+  workbook.toFileAsync('./archivo8.xlsx') // and save it in another file
+}
+deleteSheet()
