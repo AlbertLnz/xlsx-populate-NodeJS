@@ -97,4 +97,13 @@ async function copyingAFileAndCreateOtherFileWithAnotherSheet() {
   workbook.addSheet('Hoja 2')
   workbook.toFileAsync('./archivo6.xlsx')
 }
-copyingAFileAndCreateOtherFileWithAnotherSheet()
+// copyingAFileAndCreateOtherFileWithAnotherSheet()
+
+// Reading the name of the sheets from a file
+async function readVariousSheetsNamesFromAFile() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo6.xlsx')
+
+  const sheetsNames = workbook.sheets().map(sheet => sheet.name())
+  console.log(sheetsNames) // === [ 'Sheet1', 'Hoja 2' ]
+}
+readVariousSheetsNamesFromAFile()
