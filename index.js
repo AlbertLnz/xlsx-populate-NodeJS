@@ -62,7 +62,7 @@ async function readSpecificRangeFromASheet() {
 }
 // readSpecificRangeFromASheet()
 
-//
+// Creating a Sheet, and complete with data using an Array
 async function creatingAFileWithVariousRows() {
   const workbook = await XlsxPopulate.fromBlankAsync()
   workbook.sheet(0).cell('A1').value([
@@ -75,6 +75,7 @@ async function creatingAFileWithVariousRows() {
 }
 // creatingAFileWithVariousRows()
 
+// Creating a Sheet, and complete with data using JS code
 async function creatingAFileUsingJSCode() {
   const workbook = await XlsxPopulate.fromBlankAsync()
   workbook.sheet(0).cell('A1').value([
