@@ -45,3 +45,11 @@ async function readACellFromASheet() {
   console.log(a2Value) // === 'Carlos'
 }
 // readACellFromASheet()
+
+// Reading all the file (range)
+async function readARangeFromASheet() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo3.xlsx')
+  const range = workbook.sheet('Sheet1').usedRange().value()
+  console.log(range)
+}
+readARangeFromASheet()
