@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/AlbertLnz/xlsx-populate-NodeJS/issues"
   },
-  "homepage": "https://github.com/AlbertLnz/xlsx-populate-NodeJS#readme"
+  "homepage": "https://github.com/AlbertLnz/xlsx-populate-NodeJS#readme",
+  "dependencies": {
+    "xlsx-populate": "1.21.0"
+  }
 }
