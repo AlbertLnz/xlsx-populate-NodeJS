@@ -116,7 +116,7 @@ async function changeSheetName() {
 
   workbook.toFileAsync('./archivo7.xlsx') // and save it in another file
 }
-changeSheetName()
+// changeSheetName()
 
 // Delete a sheet
 async function deleteSheet() {
@@ -126,4 +126,14 @@ async function deleteSheet() {
 
   workbook.toFileAsync('./archivo8.xlsx') // and save it in another file
 }
-deleteSheet()
+// deleteSheet()
+
+// Creating a XLSX file with a password
+async function createAFileWithPassword() {
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo8.xlsx')
+
+  workbook.toFileAsync('./archivo8-password.xlsx', {
+    password: '12345'
+  })
+}
+createAFileWithPassword()
