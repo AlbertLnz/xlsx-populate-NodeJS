@@ -37,3 +37,11 @@ async function createBlankFileDataBase() {
   workbook.toFileAsync('./archivo3.xlsx')
 }
 createBlankFileDataBase()
+
+// Reading a file
+async function readACellFromASheet(){
+  const workbook = await XlsxPopulate.fromFileAsync('./archivo3.xlsx')
+  const a2Value = workbook.sheet('Sheet1').cell('A2').value()
+  console.log(a2Value) // === 'Carlos'
+}
+readACellFromASheet()
