@@ -73,4 +73,14 @@ async function creatingAFileWithVariousRows() {
 
   workbook.toFileAsync('./archivo4.xlsx')
 }
-creatingAFileWithVariousRows()
+// creatingAFileWithVariousRows()
+
+async function creatingAFileUsingJSCode() {
+  const workbook = await XlsxPopulate.fromBlankAsync()
+  workbook.sheet(0).cell('A1').value([
+    [new Date().getDate(), new Date().getMonth()+1, new Date().getFullYear()]
+  ])
+
+  workbook.toFileAsync('./archivo5.xlsx')
+}
+creatingAFileUsingJSCode()
